@@ -54,6 +54,8 @@
                 </li>
             </ul>
         </div>
+
+
         <div class="navbar-nav ml-auto">
             <div class="nav-item dropdown">
                 {% if user.is_authenticated %}
@@ -77,8 +79,10 @@
         </div>
         <div><b span style="color: black;"><a href="{% url 'viewer:order-summary' %}" class="button"> Košík </b></a>
         </div>
-    </div>
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
 </nav>
+
 <div class="container-fluid" style="width: 85%">
     <div class="jumbotron">
         <!-- Jumbotron -->
@@ -96,13 +100,14 @@
 
         <!-- Jumbotron -->
         {% block content %}{% endblock %}
-
+        {% include "weather.html" %}
         {% include "footer.html" %}
 
 
     </div>
 </div>
-
+ <!__ <div class="elfsight-app-ef5b6cf4-27fa-4312-953b-8297bb1a2f3c"></div>
+    </div> >
 </body>
 
 </html>
